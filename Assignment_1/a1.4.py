@@ -18,13 +18,17 @@ if __name__ == "__main__":
 
     # Difference between Remove and Discard:
     # Remove throws an error if the given set object is not in the set.
-    # Discard does NOT through an error if the given set object is not in the set.
+    # Discard does NOT throw an error if the given set object is not in the set.
 
     print("\nJoined:", A.union(B),  # join A and B
           "\nIntersection:", A.intersection(B),  # intersect A and B
           "\nIs A subset of B?", A.issubset(B),  # is A subset of B
-          "\nAre A and B disjoint sets?", A.isdisjoint(B),  # are A and B disjoint
-          "\nJoined A and B, B and A:", A.union(B), B.union(A),  # join A and B, B and A
+          "\nAre A and B disjoint sets?", A.isdisjoint(B))  # are A and B disjoint
+
+    A.update(B)  # Join A with B
+    B.update(A)  # Join B with A
+
+    print("Joined A and B, B and A:", A, B,  # join A and B, B and A
           "\nSymmetric Difference:", A.symmetric_difference(B))  # symmetric difference of A and B
 
     # Delete sets
